@@ -1,6 +1,6 @@
 <h1>Rutgers SOC Parser</h1>
 
-Rutgers SOC Parser is a command line project written in Java that allows you to pull large amounts of data from Rutgers SOC API and populate databases accordingly.
+Rutgers SOC Parser is a command line project written in Java that allows users to pull large amounts of data from Rutger's SOC API and populate databases accordingly.
 
 <h2>How to use</h2>
 
@@ -58,3 +58,6 @@ When 'ruclass' is executed, extracted data is parsed into this model and inserte
   }
 }
 ```
+## License
+
+  [ISC](https://opensource.org/licenses/ISC)
