@@ -4,12 +4,16 @@ Rutgers SOC Parser is a command line project written in Java that allows you to 
 
 <h2>How to use</h2>
 
+Before running the program, it is required that a MongoDB instance is running locally for so there is an endpoint for information. If the parser fails to connect to a database an error will be thrown.
+
 | Command | Description 
 | --- | --- 
 | `rucore` | Extracts and parses course data into a MongoDB Model
 | `ruclass` | Extracts and parses class meeting time data into a MongoDB Model
 
 <h2>Models</h2>
+
+These models are created by the parser and are automatically inserted once parsed.
 
 <h4>RU Core MongoDB Model</h4>
 
