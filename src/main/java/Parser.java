@@ -29,15 +29,6 @@ public class Parser {
         semester = r.nextInt();
         requestAndSortData(year, semester, campus);
         waitForCommand();
-//        MongoDB.connect();
-//        for(Course c : masterCourseList){
-//            MongoDB.insertCoreClassData(c);
-//        }
-//        for (MeetingTime mt: masterMeetingTimeList) {
-//            System.out.println(mt.getCampusAbbrev() + " " + mt.getBuildingCode() + " " + mt.getRoomNumber() + " " + mt.getMeetingDay() + " " + mt.getTimeUnit());
-//        }
-
-        //updateClassroomAvailability();
 
         r.close();
     }
@@ -54,23 +45,20 @@ public class Parser {
                newTimes.add(mt);
             }
         }
-//        for (MeetingTime mt: newTimes) {
-//            System.out.println(mt.getCampusAbbrev() + " | " + mt.getBuildingCode() + " | " + mt.getRoomNumber() + " | " + mt.getMeetingDay() + " | " + mt.getTimeUnit());
-//        }
+
     }
 
     public static void waitForCommand() throws IOException {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        //System.out.print("rcs> ");
         String command = input.readLine().toLowerCase();
-        //System.err.println(command);
 
-        if (command.startsWith("rucore ")) {
+        if (command.startsWith("rucore")) {
             Commands.rucore();
-            //System.out.println("Number of active threads from the given thread: " + Thread.activeCount());
         }
 
-
+        if (command.startsWith("ruclass")) {
+            Commands.ruclass();
+        }
         else {
             System.out.println("Invalid command usage, type 'help' for more information.");
             waitForCommand();
@@ -80,12 +68,6 @@ public class Parser {
 
     }
 
-    public static void updateClassroomAvailability(){
-        MongoDB.connect();
-        for (MeetingTime mt: newTimes) {
-            MongoDB.insertClassTime(year, semester, campus, mt);
-        }
-    }
 
 
 }

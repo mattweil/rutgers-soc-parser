@@ -1,4 +1,5 @@
 import api.Course;
+import api.MeetingTime;
 
 public class Commands {
 
@@ -7,4 +8,12 @@ public class Commands {
             MongoDB.insertCoreClassData(c);
         }
     }
+
+    public static void ruclass(){
+        MongoDB.connect();
+        for (MeetingTime mt: Parser.newTimes) {
+            MongoDB.insertClassTime(Parser.year, Parser.semester, Parser.campus, mt);
+        }
+    }
+
 }
