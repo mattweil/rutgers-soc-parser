@@ -20,14 +20,7 @@ public class Request {
         con.setReadTimeout(100000);
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
-
-        // Authorization: Bearer ACCESS_TOKEN
-        //con.setRequestProperty("Authorization","Bearer "+ Genius.accessToken);
-
-        int responseCode = con.getResponseCode();
-
         InputStream unGzipped = decompressStream(con.getInputStream());
-
         BufferedReader in = new BufferedReader(new InputStreamReader(unGzipped));
         String inputLine;
         StringBuffer response = new StringBuffer();
@@ -36,9 +29,6 @@ public class Request {
             response.append(inputLine);
         }
         in.close();
-
-
-
         return response.toString();
     }
 

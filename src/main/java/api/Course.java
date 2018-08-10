@@ -7,6 +7,7 @@ public class Course {
     public String index;
     public String level;
     public int schoolCode;
+    public boolean satisfyCore;
     public String subjectCode;
     public String courseCode;
     public String credits;
@@ -14,6 +15,23 @@ public class Course {
     public String subjectDescription;
     public ArrayList<Course> prereqs;
     public ArrayList<Section> sections;
+    public ArrayList<String> coreCodes;
+
+    public boolean isSatisfyCore() {
+        return satisfyCore;
+    }
+
+    public void setSatisfyCore(boolean satisfyCore) {
+        this.satisfyCore = satisfyCore;
+    }
+
+    public ArrayList<String> getCoreCodes() {
+        return coreCodes;
+    }
+
+    public void setCoreCodes(ArrayList<String> coreCodes) {
+        this.coreCodes = coreCodes;
+    }
 
     public String getTitle() {
         return title;

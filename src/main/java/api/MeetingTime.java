@@ -1,6 +1,7 @@
 package api;
 
 public class MeetingTime {
+    public String courseIndex;
     public String campusName;
     public String campusAbbrev;
     public String buildingCode;
@@ -8,6 +9,19 @@ public class MeetingTime {
     public String meetingDay;
     public String startTime;
     public String endTime;
+    public String timeUnit;
+
+    public String getCourseIndex() {
+        return courseIndex;
+    }
+
+    public void setCourseIndex(String courseIndex) {
+        this.courseIndex = courseIndex;
+    }
+
+    public void setTimeUnit(String timeUnit) {
+        this.timeUnit = timeUnit;
+    }
 
     public String getCampusName() {
         return campusName;
@@ -63,5 +77,9 @@ public class MeetingTime {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public String getTimeUnit() {
+        return timeUnit;
     }
 }
