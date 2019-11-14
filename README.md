@@ -17,7 +17,7 @@ These models are created by the parser and are automatically inserted once parse
 
 <h4>RU Core MongoDB Model</h4>
 
-When 'rucore' is executed extracted, data is parsed into this model and inserted into a MongoDB database.
+When 'rucore' is executed, data is parsed into this model and inserted into a MongoDB database.
 
 ```javascript
 {
